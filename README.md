@@ -32,7 +32,7 @@ The **⚙ Setup** drawer opens on the left. Close it (press `S`) for the audienc
 | `F` | Fullscreen |
 | `M` | Show the detection mask (magenta) |
 | `C` | Calibrate (2 clicks) |
-| `P` | Pick the ball colour (1 click) |
+| `P` | Select the ball (1 tap) |
 | `Esc` | Cancel a click mode |
 | Click on the video | Lock the tracker onto the object you clicked |
 
@@ -53,7 +53,8 @@ Setup → **🧪 Demo (simulated)** plays a synthetic side view of a catapult th
 It goes through the same tracking code as the camera.
 
 1. Click **Calibrate**, then click the **0 m** mark and the **5 m** mark on the white line.
-   Real length = `5`. (Or press **Auto-calibrate demo**.)
+   Real length = `5`. (Or press **Auto-calibrate demo**.) Then tap the status pill, **SELECT THE BALL ▸**,
+   and tap the ball in the cup.
 2. Watch a launch. The status pill goes **READY → IN FLIGHT → LANDED**, the trail is drawn, and the
    dashed parabola, range bar and **R = … m** label appear.
 3. Compare the results with the **DEMO truth** banner in the top-left corner of the video:
@@ -71,7 +72,7 @@ It goes through the same tracking code as the camera.
 This is the best rehearsal. Record a few throws with a phone, or with the actual webcam, from the
 camera position you plan to use. Then Setup → **🎞 Video file**.
 
-* Calibrate on the tape that is visible in the clip, pick the ball colour, and play the clip.
+* Calibrate on the tape that is visible in the clip, select the ball, and play the clip.
   **Restart** replays it. **Speed** slows playback without affecting the physics, because the app
   uses the video's own timestamps.
 * **Slow-mo clips:** set *Slow-mo factor* to the ratio of capture fps to playback fps
@@ -82,7 +83,7 @@ camera position you plan to use. Then Setup → **🎞 Video file**.
 
 Setup → **📷 Camera**, then pick the camera from the list. External USB webcams appear there too.
 
-* Click **Pick colour**, then click on the ball. Turn **Show mask** on: only the ball should be magenta.
+* Tap **🎯 Select the ball**, then tap the ball. Turn **Show mask** on: only the ball should be magenta.
 * Hold the ball still for about half a second (until **READY**), then toss it in an arc across the frame.
   It should be tracked, and the trail should end where it lands.
 
@@ -98,7 +99,7 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
 * Put the phone on a **tripod**. Rotating or moving it after calibration invalidates the calibration.
   If the picture changes shape, the app notices and asks you to calibrate again.
 * The screen is kept awake while a source is running, where the browser allows it.
-* **Outdoors:** after picking the ball colour, tap **🔒 Lock exposure & colour** if your camera offers it.
+* **Outdoors:** after selecting the ball, tap **🔒 Lock exposure & colour** if your camera offers it.
   This stops automatic exposure and white balance from shifting the ball's colour as clouds pass.
   **Brightness** adjusts exposure compensation. Both appear only on cameras that support them, mostly
   Android Chrome.
@@ -123,8 +124,13 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
 3. Check the scale in the info line, e.g. "140 px/m (7 mm per pixel)".
    A longer reference line gives better accuracy.
 
-**Ball colour**
-1. Place the ball in the catapult cup, then **🎨 Pick colour** → click on the ball.
+**The ball (select it)**
+1. Place the ball in the catapult cup, then tap **🎯 Select the ball** (or tap the status pill when it says
+   *SELECT THE BALL ▸*, or press `P`), and tap the ball. The app learns the ball's **colour** (any bright
+   colour: orange, yellow, red, pink, green, blue), its **size** and **where it sits**, and locks onto it.
+   It warns you if the colour also covers a large part of the picture, for example a blue ball against blue
+   sky or a green ball on grass. It refuses a ball with no colour (white, grey, black), which can't be
+   tracked by colour.
 2. Turn on **Show mask (M)**. The ball should be a solid magenta dot and nothing else should be magenta.
    * Background lights up (brown wood, orange shirts, cones, autumn leaves): raise *Saturation min*
      and *Brightness min*, narrow the hue range, or use **▭ Detection zone** to draw a box around
@@ -134,7 +140,7 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
    ball, and close to where the previous ball sat in the cup, not simply the biggest one. So shirts,
    cones and faces are normally ignored. If the green **lock ring** is still on the wrong object,
    **click on the ball** to lock onto it.
-4. Re-pick the colour whenever the light changes (clouds, sunset). This takes 5 seconds.
+4. Select the ball again whenever the ball or the light changes (clouds, sunset). This takes 5 seconds.
 
 **Dry run.** Do one or two practice throws and compare R with the tape before the competition starts.
 
@@ -195,7 +201,7 @@ The "tracked launch" speed shown under the numbers does not depend on this choic
 | Symptom | Fix |
 |---|---|
 | Status says **CALIBRATE FIRST ▸** | Tap it, then tap both ends of your reference line. |
-| "NO BALL DETECTED" with the ball in view | Pick colour again; lower *Saturation min* / *Brightness min*; check *Min blob*. |
+| "NO BALL DETECTED" with the ball in view | Select the ball again; lower *Saturation min* / *Brightness min*; check *Min blob*. |
 | Lock ring on the wrong object | Click on the ball; use a detection zone; tighten the colour sliders (check with the mask). |
 | Launch not detected | Lower the *Launch trigger*. A higher trigger means fewer false starts from people walking around. |
 | "Ball lost mid-flight — no result" | The ball vanished in the air before the app had enough of the arc to extend it to the ground. It shows no number rather than a wrong one. Check the mask during a throw: motion blur fades the colour, so lower *Saturation min*. You can also raise *End if lost for*. |
