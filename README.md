@@ -95,6 +95,11 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
 * Put the phone on a **tripod**. Rotating or moving it after calibration invalidates the calibration.
   If the picture changes shape, the app notices and asks you to calibrate again.
 * The screen is kept awake while a source is running, where the browser allows it.
+* **Outdoors:** after picking the ball colour, tap **🔒 Lock exposure & colour** if your camera offers it.
+  This stops automatic exposure and white balance from shifting the ball's colour as clouds pass.
+  **Brightness** adjusts exposure compensation. Both appear only on cameras that support them, mostly
+  Android Chrome.
+* On a slow device, the app lowers the *Processing width* by itself if detection can't keep up, and tells you.
 
 ## Event day: setup at the field
 
