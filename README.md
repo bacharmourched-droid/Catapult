@@ -62,6 +62,9 @@ It goes through the same tracking code as the camera.
      and **v₀** should match the true **v₀**.
    In testing, R matched the truth to about 1 cm and v₀ to about 0.01 m/s.
 4. Press `Space` for the next launch, or set *Auto next launch* to 5 s and let it run.
+5. Set *Demo* to **realistic** to practise under event-day conditions: camera noise, passing clouds,
+   motion blur, a smaller ball, and orange things that are not the ball. These are a spectator's shirt,
+   a cone, and someone walking past. Try the mask, the detection zone and clicking the ball.
 
 ### 2. A recorded video of your own setup
 
@@ -127,7 +130,10 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
      and *Brightness min*, narrow the hue range, or use **▭ Detection zone** to draw a box around
      the flight area.
    * Ball flickers or disappears in flight: lower *Saturation min* and *Brightness min*, or lower *Min blob*.
-3. If the green **lock ring** is on the wrong object, **click on the ball** to lock onto it.
+3. The tracker picks the most *ball-like* orange object. That means round, the size of the previous
+   ball, and close to where the previous ball sat in the cup, not simply the biggest one. So shirts,
+   cones and faces are normally ignored. If the green **lock ring** is still on the wrong object,
+   **click on the ball** to lock onto it.
 4. Re-pick the colour whenever the light changes (clouds, sunset). This takes 5 seconds.
 
 **Dry run.** Do one or two practice throws and compare R with the tape before the competition starts.
