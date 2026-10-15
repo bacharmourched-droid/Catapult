@@ -2,6 +2,8 @@
 
 **Created by Bachar Mourched. © 2026, all rights reserved.** See [LICENSE](LICENSE). Open the app at https://bacharmourched-droid.github.io/Catapult/.
 
+The AI ball finder in `ai/` uses Google MediaPipe Tasks Vision and the EfficientDet-Lite0 model (both Apache-2.0).
+
 A live projectile tracker for the catapult competition. It follows a brightly coloured ball through a
 camera feed, draws its trajectory over the video, and shows the range **R** and the launch speed
 **v₀ = √(R·g)** (45° launch) in large type for a projector. It also shows the flight time and maximum height.
@@ -99,6 +101,9 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
 * Put the phone on a **tripod**. Rotating or moving it after calibration invalidates the calibration.
   If the picture changes shape, the app notices and asks you to calibrate again.
 * The screen is kept awake while a source is running, where the browser allows it.
+* **The AI ball finder** works on the website version (`https://…`). The first time, it downloads about
+  20 MB, which the browser then keeps, so **open the site once over Wi-Fi before the event**. When the page
+  is opened as a local file, the AI is unavailable, but the round-object finder and tap-to-select still work.
 * **Outdoors:** after selecting the ball, tap **🔒 Lock exposure & colour** if your camera offers it.
   This stops automatic exposure and white balance from shifting the ball's colour as clouds pass.
   **Brightness** adjusts exposure compensation. Both appear only on cameras that support them, mostly
@@ -124,10 +129,19 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
 3. Check the scale in the info line, e.g. "140 px/m (7 mm per pixel)".
    A longer reference line gives better accuracy.
 
-**The ball (select it)**
-1. Place the ball in the catapult cup, then tap **🎯 Select the ball** (or tap the status pill when it says
-   *SELECT THE BALL ▸*, or press `P`), and tap the ball. The app learns the ball's **colour** (any bright
-   colour: orange, yellow, red, pink, green, blue), its **size** and **where it sits**, and locks onto it.
+**The ball (find it, confirm it)**
+1. Place the ball in the catapult cup. When the camera starts, the app **looks for the ball by itself**
+   and draws a **green circle** with the question **“Is this the ball you will launch?”**. It uses three
+   layers:
+   * an **AI object detector** that recognises balls of any colour once they look big enough on screen
+     (about 30 px or more);
+   * a **round-object finder** for smaller balls of any vivid colour;
+   * **your tap**: tap the ball anywhere on the picture, and the same question appears.
+
+   **No** shows the next candidate, and once the candidates run out it asks you to tap the ball.
+   **Yes** defines the ball. The app learns its **colour** (any bright colour), its **size** and
+   **where it sits**, locks onto it, and the status turns green: **READY — BALL LOCKED**.
+   Search again at any time with **🎯 Find / select the ball**, the status pill or `P`.
    It warns you if the colour also covers a large part of the picture, for example a blue ball against blue
    sky or a green ball on grass. It refuses a ball with no colour (white, grey, black), which can't be
    tracked by colour.
