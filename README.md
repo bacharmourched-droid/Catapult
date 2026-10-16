@@ -124,7 +124,9 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
 **Reference line (calibration)**
 1. Lay a tape measure or chalk line **on the ground along the throwing direction**, in the same vertical
    plane as the flight, starting at the catapult (e.g. 0 m to 5 m, or longer if you can).
-2. Setup → *Real length* = that distance → **📏 Calibrate**, then click the two ends of the line.
+2. Setup → *Real length* = that distance → **📏 Calibrate**, then tap the two ends of the line. On a
+   phone, **keep your finger down**: a magnifying loupe with a crosshair shows exactly what is under your
+   finger. Slide onto the mark, then lift.
    The cyan line also defines **horizontal** (tilt is corrected) and **ground level**.
 3. Check the scale in the info line, e.g. "140 px/m (7 mm per pixel)".
    A longer reference line gives better accuracy.
@@ -162,7 +164,8 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
 1. Type the team name in the results panel. It appears in the header and in the launch log.
 2. Wait for **READY — BALL LOCKED** (green), then launch. The ball must sit still in the cup for a
    moment first. Until it does, the status shows *BALL SEEN — HOLD STILL* and motion is ignored.
-3. Results appear when the ball lands. Press **Space** before the next team.
+3. Results appear when the ball lands, in the panel and as a large banner over the video (team, R and v₀)
+   for 8 seconds. Press **Space** before the next team.
 4. **CSV** downloads the launch log. The log, calibration and colour settings are saved in the browser
    and survive a page reload.
 
