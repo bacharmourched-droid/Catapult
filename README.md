@@ -144,9 +144,15 @@ Setup → **📷 Camera**, then pick the camera from the list. External USB webc
    **Yes** defines the ball. The app learns its **colour** (any bright colour), its **size** and
    **where it sits**, locks onto it, and the status turns green: **READY — BALL LOCKED**.
    Search again at any time with **🎯 Find / select the ball**, the status pill or `P`.
-   It warns you if the colour also covers a large part of the picture, for example a blue ball against blue
-   sky or a green ball on grass. It refuses a ball with no colour (white, grey, black), which can't be
-   tracked by colour.
+   It warns you if the colour also covers part of the picture. A ball with no usable colour (white, grey,
+   black), a ball that is only a few pixels wide, or one that has the colour of the background is followed
+   by its **movement** instead: the app watches the launch point you tapped and picks up the small object
+   that flies out of it. So any ball works, as long as the camera stands perfectly still.
+
+   **Camera far away (20–40 m):** zoom in until the flight just fills the picture, choose *Camera mode →
+   Long distance*, and tap the ball yourself (hold to aim with the loupe). The app raises the processing
+   detail automatically for a small ball. As a guide, the ball should be at least 3 pixels wide in the
+   camera picture; the Setup panel shows its measured width and warns when it is too small.
 2. Turn on **Show mask (M)**. The ball should be a solid magenta dot and nothing else should be magenta.
    * Background lights up (brown wood, orange shirts, cones, autumn leaves): raise *Saturation min*
      and *Brightness min*, narrow the hue range, or use **▭ Detection zone** to draw a box around
@@ -219,6 +225,7 @@ The "tracked launch" speed shown under the numbers does not depend on this choic
 |---|---|
 | Status says **CALIBRATE FIRST ▸** | Tap it, then tap both ends of your reference line. |
 | "NO BALL DETECTED" with the ball in view | Select the ball again; lower *Saturation min* / *Brightness min*; check *Min blob*. |
+| Ball not found from far away | Tap it yourself (Setup → Find the ball, or just tap the video) and answer Yes. Zoom in, use *Long distance* camera mode, keep the camera still. The mask shows movement in cyan: during a throw you should see the ball as a moving cyan speck. |
 | Lock ring on the wrong object | Click on the ball; use a detection zone; tighten the colour sliders (check with the mask). |
 | Launch not detected | Lower the *Launch trigger*. A higher trigger means fewer false starts from people walking around. |
 | "Ball lost mid-flight — no result" | The ball vanished in the air before the app had enough of the arc to extend it to the ground. It shows no number rather than a wrong one. Check the mask during a throw: motion blur fades the colour, so lower *Saturation min*. You can also raise *End if lost for*. |
